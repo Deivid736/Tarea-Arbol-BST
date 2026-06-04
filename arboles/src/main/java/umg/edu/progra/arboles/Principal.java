@@ -14,6 +14,28 @@ public class Principal {
 
     public static void main(String[] args) {
 
+    	  // SOLUCION EXTRA 4
+    	
+    	if (args.length > 0) {
+
+    	    ArbolBinarioBusqueda arbolDesdeArgs = new ArbolBinarioBusqueda();
+
+    	    for (int i = 0; i < args.length; i++) {
+    	        int valor = Integer.parseInt(args[i]);
+    	        arbolDesdeArgs.insertar(valor);
+    	    }
+
+    	    System.out.println("===== EXTRA E4: BST construido desde argumentos =====");
+
+    	    System.out.print("Valores ordenados con InOrden: ");
+    	    arbolDesdeArgs.inOrden();
+
+    	    System.out.println("Representacion visual del arbol:");
+    	    arbolDesdeArgs.imprimirArbol();
+
+    	    return;
+    	}
+    	
         ArbolBinarioBusqueda arbol = new ArbolBinarioBusqueda();
 
         /*
@@ -86,7 +108,6 @@ public class Principal {
 
         System.out.println("LCA(60, 80): "
                 + arbolLCA.ancestroComunMasBajo(60, 80));
-        
         System.out.println("Altura:  " + arbol.altura());
         System.out.println("Minimo:  " + arbol.minimo());
         System.out.println("Maximo:  " + arbol.maximo());
