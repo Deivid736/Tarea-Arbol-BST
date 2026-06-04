@@ -213,6 +213,31 @@ public class ArbolBinarioBusqueda {
                 + contarNodosRecursivo(nodo.derecho);
     }
     
+    // Solucion 2
+    
+    public boolean esBalanceado() {
+        return esBalanceadoRecursivo(raiz);
+    }
+
+    private boolean esBalanceadoRecursivo(Nodo nodo) {
+        if (nodo == null) {
+            return true;
+        }
+
+        int alturaIzquierda = alturaRecursiva(nodo.izquierdo);
+        int alturaDerecha = alturaRecursiva(nodo.derecho);
+
+        int diferencia = alturaIzquierda - alturaDerecha;
+
+        if (diferencia < 0) {
+            diferencia = diferencia * -1;
+        }
+
+        return diferencia <= 1
+                && esBalanceadoRecursivo(nodo.izquierdo)
+                && esBalanceadoRecursivo(nodo.derecho);
+    }
+    
     // ============================================================
     // RECORRIDOS DEL ARBOL
     // ============================================================
