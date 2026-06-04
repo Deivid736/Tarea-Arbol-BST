@@ -86,6 +86,7 @@ public class Principal {
 
         System.out.println("LCA(60, 80): "
                 + arbolLCA.ancestroComunMasBajo(60, 80));
+        
         System.out.println("Altura:  " + arbol.altura());
         System.out.println("Minimo:  " + arbol.minimo());
         System.out.println("Maximo:  " + arbol.maximo());
@@ -137,6 +138,23 @@ public class Principal {
 
         System.out.print("InOrden despues: ");
         arbolInvertido.inOrden();
+        
+        System.out.println("\n========== EJERCICIOS EXTRA BST ==========");
+
+        System.out.print("Valores actuales del arbol (InOrden): ");
+        arbol.inOrden();
+
+        System.out.println("\n[E1] K-esimo elemento menor");
+        System.out.println("Primer menor      : " + arbol.kEsimoMenor(1));
+        System.out.println("Tercer menor      : " + arbol.kEsimoMenor(3));
+        System.out.println("Quinto menor      : " + arbol.kEsimoMenor(5));
+        System.out.println("Octavo menor      : " + arbol.kEsimoMenor(8));
+
+        System.out.println("\n[E2] Valores dentro del intervalo [20,60]");
+        arbol.imprimirRangoOrdenado(20, 60);
+
+        System.out.println("\n[E3] Longitud maxima entre nodos");
+        System.out.println("Diametro calculado: " + arbol.diametro());
         
         System.out.println("\n--- Eliminacion ---");
         System.out.println("Eliminando 20 (nodo con 1 hijo)...");
